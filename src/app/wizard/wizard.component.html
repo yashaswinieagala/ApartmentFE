@@ -1,0 +1,112 @@
+<div class="Wizard-class">
+  <div class="form-container">
+    <div class="form-container2">
+    <form action="/action_page.php" #myform="ngForm" (ngSubmit)="Next()">
+        <div *ngIf="step === 1" class="step1-container">
+            <div class="step1-heading">Step 1: Enter Number of Flats</div>
+            <input type="number" name="noofFlats" [(ngModel)]="noofFlats" id="noofFlats" class="step1-input" placeholder="Enter number of flats" required>
+
+            <button  type ="submit" (click)="nextStep()" class="step1-button">Next</button>
+        </div>
+    </form>
+</div>
+    <form action="/action_page.php" #form="ngForm" (ngSubmit)="onFormSubmit()">
+        <!-- Step 2 -->
+        <div *ngIf="step === 2" class="step2form">
+            <h3>Step 2: Enter Flat Details (Flat {{ currentFlatIndex + 1 }})</h3>
+
+            <div class="step1-heading">Complex ID</div>
+            <input type="number" name="complexId" [(ngModel)]="complexId" class="inputform forminput" (keydown.enter)="nextStep()" placeholder="Complex number">
+            
+            <div class="step2con">
+                <label class="Form_label">Flat number</label>
+                <input type="text"  for = "flatNo" class="inputform forminput" name="flatNo" [(ngModel)]="flatNo" placeholder="Flat number" required>
+                <div *ngIf="form.controls['flatNo']?.invalid && (form.controls['flatNo']?.dirty || form.controls['flatNo']?.touched)">
+                    <div style="color: red;">Flat Size is required</div>
+                </div>
+            </div>
+
+            <div class="step2con">
+                <label class="Form_label">Owner Name</label>
+                <input type="text" class="inputform forminput" name="ownerName" [(ngModel)]="ownerName" placeholder="Owner name" required>
+                <div *ngIf="form.controls['ownerName']?.invalid && (form.controls['ownerName']?.dirty || form.controls['ownerName']?.touched)">
+                    <div style="color: red;">Name is required</div>
+                </div>
+            </div>
+            
+            <div class="step2con">
+                <label class="Form_label">Image Owner</label>
+                <input type="file" class="inputform imageinput" accept="image/*" name="ownerPicture" (change)="onFileSelected($event, currentFlatIndex)">
+            </div>
+
+
+      
+            <!-- Flat Size -->
+            <div class="step2con">
+                <label class="Form_label">Flat Size</label>
+                <input type="text" class="inputform forminput" name="size" [(ngModel)]="size" placeholder="Flat Size in sq ft" required>
+                <div *ngIf="form.controls['size']?.invalid && (form.controls['size']?.dirty || form.controls['size']?.touched)">
+                    <div style="color: red;">Flat Size is required</div>
+                </div>
+            </div>
+
+            <!-- Facing -->
+            <div class="step2con">
+                <label class="Form_label">Facing</label>
+                <input type="text" class="inputform facinginput" name="facing" [(ngModel)]="facing" placeholder="Facing" required>
+                <div *ngIf="form.controls['facing']?.invalid && (form.controls['facing']?.dirty || form.controls['facing']?.touched)">
+                    <div style="color: red;">Facing is required</div>
+                </div>
+            </div>
+            <!-- Phone number -->
+            <div class="step2con">
+                <label class="Form_label">Phone number</label>
+                <input type="tel" class="inputform phoneinput" name="contactNumbers" [(ngModel)]="contactNumbers" placeholder="Contact Numbers" required>
+                <div *ngIf="(form.controls['contactNumbers']?.invalid && (form.controls['contactNumbers']?.dirty || form.controls['contactNumbers']?.touched)) || (flats[currentFlatIndex].contactNumbers && !isValidPhoneNumber(flats[currentFlatIndex].contactNumbers))">
+                    <div style="color: red;">Phone number must be exactly 10 digits long.</div>
+                </div>
+            </div>
+            
+            <!-- Email -->
+            <div class="step2con">
+                <label class="Form_label">Email</label>
+                <input type="email" class="inputform Emailinput" name="email" [(ngModel)]="email" placeholder="Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required>
+                <div *ngIf="form.controls['email']?.invalid && (form.controls['email']?.dirty || form.controls['email']?.touched)">
+                    <div style="color: red;">Email is required</div>
+                </div>
+            </div>
+            <!-- Number of occupants -->
+            <div class="step2con">
+                <label class="Form_label">Occupants</label>
+                <input type="number" class="inputform Occupantsinput" name="occupants" [(ngModel)]="occupants" placeholder="Number of Occupants" required>
+                <div *ngIf="form.controls['occupants']?.invalid && (form.controls['occupants']?.dirty || form.controls['occupants']?.touched)">
+                    <div style="color: red;">Occupants is required</div>
+                </div>
+            </div>
+            <!-- Services to avail -->
+            <h4>Services to Avail:</h4>
+            <div class="step2con">
+                <label for="isAdminYes">
+                    <input type="radio" name="isAdmin" id="isAdminYes" [(ngModel)]="selectedServices" [value]="true" required>Yes
+                </label>
+                <label for="isAdminNo">
+                    <input type="radio" name="isAdmin" id="isAdminNo" [(ngModel)]="selectedServices" [value]="false" required>No
+                </label>
+                <div *ngIf="form.controls['isAdmin']?.invalid && (form.controls['isAdmin']?.dirty || form.controls['isAdmin']?.touched)">
+                    <div style="color: red;">You need to select one option</div>
+                </div>
+                <br>
+            </div>
+            <button (click)="prevStep()">Previous</button>
+            <button (click)="saveAndNext()" [disabled]="form.invalid"  >Save and Next</button>
+        </div>
+    
+    <!-- Step 3: Finish -->
+    <div *ngIf="step === 3">
+        <h3>All flats entered successfully!</h3>
+        <button type="submit"  (click)="onFormSubmit()">submit</button>
+        <button routerLink="/">Go to Home Page</button>
+    </div>
+</form>
+</div>
+

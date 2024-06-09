@@ -1,0 +1,43 @@
+<div class="summary-container">
+    <div class="summary-grid">
+      <h1>Flat Details</h1>
+      <table>
+        <thead>
+          <tr>
+            <th>Complex Id</th>
+            <th>Owner Name</th>
+            <th>Flat Size</th>
+            <th>Flat Facing</th>
+            <th>Phone number</th>
+            <th>Email</th>
+            <th>No of occupants</th>
+            <th>Services Selected</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let flat of flatDetails; let i = index" [class.odd-row]="i % 2 !== 0">
+            <td>{{ flat.complexId }}</td>
+            <td>{{ flat.ownerName }}</td>
+            <td>{{flat.size}}</td>
+            <td>{{flat.facing}}</td>
+            <td>{{ flat.contactNumbers}}</td>
+            <td>{{ flat.email }}</td>
+            <td>{{flat.occupants}}</td>
+          
+              <td *ngIf="flat.selectedServices" >Electric Service,Water Service,Laundry Service</td>
+
+              <td *ngIf="flat.selectedServices == false">No services selected</td>
+          </tr>
+
+        </tbody>
+      </table>
+    </div>
+  
+    <div class="graph">
+      <canvas id="complexPriceChart" width="600" height="300"></canvas>
+    </div>
+
+
+  
+  </div>
+  

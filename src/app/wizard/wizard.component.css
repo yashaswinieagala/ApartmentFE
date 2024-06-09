@@ -1,0 +1,136 @@
+/* Container for the form */
+.form-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background: #EEECB9;
+  }
+  /* Form headings */
+  h3 {
+    margin-top: 0;
+  }
+
+body.wizard-background {
+    background: #000;
+}
+  
+  /* Form labels */
+  .Form_label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  /* Input fields */
+  .inputform {
+    width: 95%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  /* Checkbox labels */
+  input[type="checkbox"] {
+    margin-right: 5px;
+  }
+  
+/* Button */
+button {
+    padding: 10px 20px;
+    margin-top: 10px;
+    margin-left: 10px; /* Add some left margin to separate from input */
+    border: none;
+    border-radius: 5px;
+    background-color:     #cc5577;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #FFF;
+    color:#cc5577
+  }
+  
+
+  /* Step indicator */
+  .step-indicator {
+    margin-bottom: 20px;
+  }
+  
+
+/* Step 1 container */
+.step1-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px; /* Add some bottom margin for separation */
+  }
+  
+  /* Step 1 heading */
+  .step1-heading {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+  }
+  
+  /* Input field */
+  .step1-input {
+    width: 100%;
+    max-width: 300px; /* Limit input width if needed */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    font-size: 1rem;
+  }
+  
+  /* Next button */
+  .step1-button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color:     #cc5577;
+
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .step1-button:hover {
+    background-color: #fff;
+    color:#cc5577;
+  }
+
+  .services-container {
+    background-color: #cc5577;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: auto;
+}
+.services-container h4 {
+    color: #2c3e50;
+    text-align: center;
+}
+.services-container ul {
+    list-style-type: none;
+    padding: 0;
+}
+.services-container li {
+     background-color: #EEECB9;;
+    margin: 10px 0;
+    padding: 15px;
+    border-radius: 4px;
+    font-size: 16px;
+}
+.services-container li strong {
+    color: #e74c3c;
+    float: right;
+}
+  
+  
+

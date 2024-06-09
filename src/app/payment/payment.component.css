@@ -1,0 +1,67 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    margin: 0;
+    padding: 20px;
+}
+.payment-container {
+    background-color: #EEECB9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: auto;
+}
+h2 {
+    color: #2c3e50;
+    text-align: center;
+}
+.form-group {
+    margin-bottom: 15px;
+}
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #000;
+    font-weight: bold;
+}
+input, select {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+.payment-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+.payment-options label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: #ecf0f1;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.payment-icon {
+    width: 75px;
+    height: 55px;
+}
+button {
+    background-color: #cc5577;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+    box-sizing: border-box;
+}
+button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}

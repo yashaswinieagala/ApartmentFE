@@ -1,0 +1,27 @@
+<div class="summary-container">
+    <div class="summary-grid">
+        <h1>User Details</h1>
+      <table>
+        <thead>
+        
+          <tr>
+            <th>User Id</th>
+            <th>User Name</th>
+            <th>User Email</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let user of userdetails; let i = index" [class.odd-row]="i % 2 !== 0" >
+            <tr *ngFor="let user of userdetails; let i = index"
+            [class.odd-row]="i % 2 !== 0"><a class="ischeck" *ngIf="user.isAdmin === false"></a>
+            <td >{{ user.userId }}</td>
+            <td >{{ user.userName }}</td>
+            <td >{{user.email}}</td>
+        </tr>
+
+        </tbody>
+      </table>
+
+   
+    </div>
+

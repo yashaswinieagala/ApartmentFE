@@ -1,0 +1,119 @@
+<div class="home-container">
+    <!-- New Primary Header (formerly secondary) -->
+    <header class="primary-header">
+      <nav>
+        <ul>
+          <li><a  class="button__text-anim" routerLink="/summary">View Summary</a></li>
+          <li><a  class="button__text-anim" routerLink="/payment">Payments</a></li>
+          <li (mouseenter)="openServicesModal()" (mouseleave)="closeServicesModal()">
+            <a class="button__text-anim">Amenities</a>
+            <div class="modal-overlay" [ngClass]="{'show': showModal}" (mouseenter)="keepModalOpen()" (mouseleave)="closeServicesModal()">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h2>Services</h2>
+                </div>
+                <div class="modal-body">
+                  <div class="service">
+                    <img src="assets/Gym.jpg" alt="Gym Service">
+                    <p class="modal-image">Gym</p>
+                  </div>
+                  <div class="service">
+                    <img src="assets/Park_area.jpg" alt="Food Stalls">
+                    <p>Park Area</p>
+                  </div>
+                  <div class="service">
+                    <img src="assets/Game_zone.jpg" alt="Game Zone">
+                    <p>Game Zone</p>
+                  </div>
+                  <div class="service">
+                    <img  class ="height" src="assets/Swimming_pool.jpg" alt="Swimming Pool">
+                    <p>Swimming Pool</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="logout">
+            <form class="form-inline">
+                <span class="text mx-3" [style.font-size.px]="'20'"> {{username}} </span>
+              <button class="btn btn-outline-danger"routerLink="/login" type="button">LogOut</button>
+         
+            </form>
+          </li>
+        </ul>
+      </nav>
+    </header>
+  
+    <!-- New Secondary Header (formerly primary) -->
+    <header class="secondary-header">
+      <div class="overlay">
+        <h1>Automate Your Apartments</h1>
+        <p>Efficiently manage maintenance requests, billing, and community communications.</p>
+        <p>configuration for new apartment complexes</p>
+        <button class="custom-button" routerLink="/wizard">Get Started</button>
+        <button class="custom-button" routerLink="/user">user details</button>
+      </div>
+    </header>
+  
+    <!-- Features Section -->
+    <section class="features">
+      <h2>Our Features</h2>
+      <div class="feature-cards">
+        <div class="feature-card">
+          <h3>Automated Billing</h3>
+          <p>Generate and manage bills effortlessly with our automated billing system.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Maintenance Requests</h3>
+          <p>Residents can easily submit and track maintenance requests online.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Secure Payments</h3>
+          <p>Integrated with multiple payment gateways for secure and easy transactions.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Community Announcements</h3>
+          <p>Keep all residents informed with real-time community announcements.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Resident Directory</h3>
+          <p>Access a comprehensive directory of all residents in the complex.</p>
+        </div>
+      </div>
+    </section>
+  
+    <!-- Promotional Section -->
+    <section class="promo">
+      <h2>Why Choose Our Service?</h2>
+      <div class="promo-cards">
+        <div class="promo-card">
+          <h3>24/7 Support</h3>
+          <p>Our team is available round the clock to assist you with any issues.</p>
+        </div>
+        <div class="promo-card">
+          <h3>User-Friendly Interface</h3>
+          <p>Easy-to-use interface designed for all ages and tech levels.</p>
+        </div>
+        <div class="promo-card">
+          <h3>Data Security</h3>
+          <p>We prioritize your data's security with top-notch encryption.</p>
+        </div>
+        <div class="promo-card">
+          <h3>Customizable Plans</h3>
+          <p>Choose from various plans that best suit your needs and budget.</p>
+        </div>
+        <div class="promo-card">
+          <h3>Scalable Solutions</h3>
+          <p>Our solutions grow with your community, ensuring seamless scalability.</p>
+        </div>
+      </div>
+    </section>
+  
+    <!-- Call to Action Section -->
+    <section class="cta">
+      <h2>Ready to Transform Your Apartment Management?</h2>
+      <p>Join numerous communities already benefiting from our solution.</p>
+      <button class="cta-button" routerLink="/register">Sign Up Now</button>
+    </section>
+  </div>
+  

@@ -1,0 +1,55 @@
+<div class="payment-container">
+  <h2>Payment Page</h2>
+  <form #paymentForm="ngForm" (ngSubmit)="onSubmit(paymentForm)">
+      <div class="form-group">
+          <label for="name">Owner Name:</label>
+          <input type="text" id="name" name="name" ngModel required>
+      </div>
+      <div class="form-group">
+          <label for="complexNumber">Complex Number:</label>
+          <input type="text" id="complexNumber" name="complexNumber" ngModel required>
+      </div>
+      <div class="form-group">
+          <label for="flatNumber">Flat Number:</label>
+          <input type="text" id="flatNumber" name="flatNumber" ngModel required>
+      </div>
+      <div class="form-group">
+          <label for="amount">Payment Amount (Rs):</label>
+          <input type="number" id="amount" name="amount" ngModel required>
+      </div>
+      <div class="form-group">
+          <label for="paymentType">Payment Type:</label>
+          <select id="paymentType" name="paymentType" ngModel required>
+              <option value="" disabled selected>Select Payment Type</option>
+              <option value="service">Services Payment</option>
+              <option value="net">Rent Payment</option>
+          </select>
+      </div>
+      <div class="form-group">
+          <label>Payment Options:</label>
+          <div class="payment-options">
+              <label>
+                  <input type="radio" name="paymentOption" value="googlepay" ngModel required>
+                  <img src="assets/googlepay.png" alt="Google Pay" class="payment-icon">
+              </label>
+              <label>
+                  <input type="radio" name="paymentOption" value="phonepe" ngModel required>
+                  <img src="assets/phonepe.png" alt="Phone Pay" class="payment-icon">
+              </label>
+              <label>
+                  <input type="radio" name="paymentOption" value="paytm" ngModel required>
+                  <img src="assets/Paytm.png" alt="Paytm" class="payment-icon">
+              </label>
+              <label>
+                  <input type="radio" name="paymentOption" value="netbanking" ngModel required>
+                  🏦 Net Banking
+              </label>
+              <label>
+                  <input type="radio" name="paymentOption" value="card" ngModel required>
+                  💳 Card Payment
+              </label>
+          </div>
+      </div>
+      <button type="submit" [disabled]="!paymentForm.valid">Submit Payment</button>
+  </form>
+</div>

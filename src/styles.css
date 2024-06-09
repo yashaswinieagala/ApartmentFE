@@ -1,0 +1,11 @@
+body
+{
+    margin:0px !important;
+}
+
+body.wizard-background ,body.summary-background,body.payment-background,body.user-background
+{
+    background: url(/../assets/download.jpg) no-repeat center center;
+    background-attachment: fixed;
+    background-size: cover;
+}

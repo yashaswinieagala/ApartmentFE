@@ -1,0 +1,49 @@
+<div class="register-wrapper">
+  <div class="register-container">
+      <div class="info-section">
+          <h1>Hi There!</h1>
+          <p>Already have an account?</p>
+          <p>Click on Emoji</p>
+          <a routerLink='/login'><span class="emoji">😜</span></a> 
+      </div>
+      <div class="form-section">
+          <h1>Sign Up</h1>
+          <form #form="ngForm" (ngSubmit)="onFormSubmit()">
+              <label for="userName">Username</label>
+              <input type="text" placeholder="Username" name="userName" id="userName" [(ngModel)]="userName" required>
+              <div *ngIf="form.controls['userName']?.invalid && form.controls['userName']?.dirty || form.controls['userName']?.touched">
+                  <div style="color:red" *ngIf="form.controls['userName']?.errors?.['required']">Username is required</div>
+              </div>
+
+              <label for="email">Email</label>
+              <input type="email" placeholder="Email" name="email" id="email"
+                  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" [(ngModel)]="email" required>
+              <div *ngIf="form.controls['email']?.invalid && form.controls['email']?.dirty || form.controls['email']?.touched">
+                  <div style="color:red" *ngIf="form.controls['email']?.errors?.['required']">Email is required</div>
+                  <div style="color:red" *ngIf="form.controls['email']?.errors?.['pattern']">Invalid Email</div>
+              </div>
+
+              <label for="password">Password</label>
+              <input type="password" placeholder="Password" name="password" id="psw" [(ngModel)]="password" minlength="6" required>
+              <div *ngIf="form.controls['psw']?.invalid && form.controls['password']?.dirty || form.controls['password']?.touched">
+                  <div style="color:red" *ngIf="form.controls['password']?.errors?.['required']">Password is required</div>
+                  <div style="color:red" *ngIf="form.controls['password']?.errors?.['minlength']">Password must be at least 6 characters</div>
+              </div>
+
+              <h3>Are you an Admin?</h3>
+              <label for="isAdminYes">
+                  <input type="radio" name="isAdmin" id="isAdminYes" [(ngModel)]="isAdmin" [value]="true"> Yes
+              </label>
+              <label for="isAdminNo">
+                  <input type="radio" name="isAdmin" id="isAdminNo" [(ngModel)]="isAdmin" [value]="false"> No
+              </label>
+              <div *ngIf="form.controls['isAdmin']?.invalid && (form.controls['isAdmin']?.dirty || form.controls['isAdmin']?.touched)">
+                  <div style="color:red" *ngIf="form.controls['isAdmin']?.errors?.['required']">You need to select one option</div>
+              </div>
+
+              <p>Already have an account? <a routerLink='/login'>Sign in</a></p>
+              <button type="submit" class="registerbtn"   [disabled]="form.invalid">Sign Up</button>
+          </form>
+      </div>
+  </div>
+</div>

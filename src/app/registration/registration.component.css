@@ -1,0 +1,126 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(to right, #ff4e50, #f9d423);
+  background-size: cover;
+}
+
+.navbar {
+  width: 100%;
+  position: fixed;
+  top: 0;
+}
+
+.register-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 70px;
+  background: #000;
+  box-sizing: border-box;
+  background-color: #cc5577;
+  background: url('../../assets/download.jpg') no-repeat center center;  background-attachment: fixed;
+  background-size: cover;
+}
+
+.register-container {
+  display: flex;
+  width: 85%;
+  height: 90%;
+  box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+  background: #fff;
+}
+
+.info-section {
+  flex: 1;
+  background: #2a3a50;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  padding: 20px;
+}
+
+.info-section h1 {
+  margin: 0;
+  font-size: 36px;
+}
+
+.info-section p {
+  margin: 5px 0;
+}
+
+.info-section .emoji {
+  font-size: 48px;
+  margin-top: 20px;
+}
+
+.form-section {
+  flex: 1;
+  background:  #EEECB9;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.form-section h1 {
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #2a3a50;
+}
+
+.form-section form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-section label {
+  margin: 10px 0 5px;
+  font-weight: bold;
+  color: #2a3a50;
+}
+
+.form-section input {
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.form-section .registerbtn {
+  background-color: #2a3a50;
+  color: white;
+  padding: 15px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.form-section .registerbtn:hover {
+  background-color: #ff4e50;
+}
+
+.form-section p {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.form-section p a {
+  color: #ff4e50;
+  text-decoration: none;
+}
+
+.form-section p a:hover {
+  text-decoration: underline;
+}
